@@ -12,7 +12,7 @@ require(ape)
 
 #set working directory (you will need to modify this to reflect the directory 
 #containing the tree file and the dataset)
-setwd("~/jsb439@cornell.edu/Dan-Shared/the_trees_are_dead_part2/analyses")
+setwd("~/jsb439@cornell.edu/Code/mammal_arboreality")
 
 #load the tree and clean up
 TimeTree<-read.tree("AAtimetreeAUTOhardMEAN.tree")
