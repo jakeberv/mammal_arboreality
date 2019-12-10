@@ -2,7 +2,7 @@
 #data collected by Johnathan Hughes
 #code by Jacob Berv, jsb439@cornell.edu
 #heavily inspired by Liam Revell's phytools examples
-#last modified 4 September 2019
+#last modified 10 December 2019
 #see end of script for R packages and their versions
 
 #load requried packages
@@ -33,6 +33,8 @@ data <-data[!data$Taxon %in% remove,]
 #prune outgroups from tree
 TimeTree<-drop.tip(TimeTree, tip=remove)
 
+#set output directory
+setwd("~/jsb439@cornell.edu/Code/mammal_arboreality/analysis")
 
 #generating a subset vector for ASR #version 1 of the dataset
 character1<-data$Nesting1
