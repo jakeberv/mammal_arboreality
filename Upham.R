@@ -12,10 +12,10 @@ require(stringr)
 
 
 #set working directory
-setwd("~/jsb439@cornell.edu/Dan-Shared/the_trees_are_dead_part2/analyses")
+setwd("~/Users/cotinga/jsb439@cornell.edu/Code/mammal_arboreality")
 
 #load the tree and clean up
-TimeTree<-read.tree("pruned_upham.tre")
+TimeTree<-read.tree("upham_2019.tre")
 TimeTree<-ladderize(TimeTree)
 
 genera<-as.character(as.data.frame(str_split_fixed(TimeTree$tip.label, "_",n=2))[,1])
@@ -113,15 +113,15 @@ transitions <- matrix(c(0, 1, 2, 1, 0, 2, 2, 2, 0), nrow=3)
 
 #fit custom transition model with ace, for maximum likelihood estimate, with different initial starting value
 fitCustom.character1 <- ace(character1, TimeTree, model=transitions, type='discrete', ip=c(0.001, 0.001))
-AIC(fitCustom.character1) #249.4975
+AIC(fitCustom.character1) #AIC = 243.5212
 
 
 fitARD.character1 <- ace(character1, TimeTree, model='ARD', type='discrete', ip=c(0.001, 0.001))
-AIC(fitARD.character1) #242.3074, but runs with errors - revisit this
+AIC(fitARD.character1) #AIC = 236.535
 
 #trying fitMK instead of ace -- results are the same, so ignoring
 test<-fitMk(TimeTree, character1, model='ARD', type='discrete')
-AIC(test)
+AIC(test) #AIC =  238.7971
 
 #setting up node labels
 cols<-setNames(palette()[1:length(unique(character1))],sort(unique(character1)))
@@ -172,16 +172,15 @@ r<-max(obj$leg[,1])-obj$leg[,2] #calculates appropriate radius lengths
 
 
 #function for adding clade arc labels for mammalian groups 
-#needs to be updated
 #addcladelabels<-function(){
-arc.cladelabels(tree=TimeTree,'Marsupialia', node=findMRCA(TimeTree, tips=c('Acrobates_pygmaeus','Rhyncholestes_raphanurus')), ln.offset=1.20, lab.offset=1.25, cex=1, mark.node=F, lwd=3, lend=1, col='grey48')
-arc.cladelabels(tree=TimeTree,'Monotremata', node=findMRCA(TimeTree, tips=c('Ornithorhynchus_anatinus','Tachyglossus_aculeatus')), ln.offset=1.20, lab.offset=1.25, cex=1, mark.node=F, lwd=3, lend=1, col='grey48')
-arc.cladelabels(tree=TimeTree,'Afrotheria', node=findMRCA(TimeTree, tips=c('Amblysomus_hottentotus','Trichechus_manatus')), ln.offset=1.20, lab.offset=1.25, cex=1, mark.node=F, lwd=3, lend=1, col='grey48')
-arc.cladelabels(tree=TimeTree,'Xenarthra', node=findMRCA(TimeTree, tips=c('Bradypus_tridactylus','Dasypus_novemcinctus')), ln.offset=1.20, lab.offset=1.25, cex=1, mark.node=F, lwd=3, lend=1, col='grey48')
-arc.cladelabels(tree=TimeTree,'Euarchonta', node=findMRCA(TimeTree, tips=c('Macaca_mulatta','Galeopterus_variegatus')), ln.offset=1.20, lab.offset=1.25, cex=1, mark.node=F, lwd=3, lend=1, col='grey48')
-arc.cladelabels(tree=TimeTree,'Glires', node=findMRCA(TimeTree, tips=c('Oryctolagus_cuniculus','Glis_glis')), ln.offset=1.20, lab.offset=1.25, cex=1, mark.node=F, lwd=3, lend=1, col='grey48')
-arc.cladelabels(tree=TimeTree,'Laurasiatheria', node=findMRCA(TimeTree, tips=c('Pteropus_giganteus','Solenodon_paradoxus')), ln.offset=1.20, lab.offset=1.25, cex=1, mark.node=F, lwd=3, lend=1, col='grey48')
-}
+#arc.cladelabels(tree=TimeTree,'Marsupialia', node=findMRCA(TimeTree, tips=c('Acrobates_pygmaeus','Rhyncholestes_raphanurus')), ln.offset=1.20, lab.offset=1.25, cex=1, mark.node=F, lwd=3, lend=1, col='grey48')
+#arc.cladelabels(tree=TimeTree,'Monotremata', node=findMRCA(TimeTree, tips=c('Ornithorhynchus_anatinus','Tachyglossus_aculeatus')), ln.offset=1.20, lab.offset=1.25, cex=1, mark.node=F, lwd=3, lend=1, col='grey48')
+#arc.cladelabels(tree=TimeTree,'Afrotheria', node=findMRCA(TimeTree, tips=c('Amblysomus_hottentotus','Trichechus_manatus')), ln.offset=1.20, lab.offset=1.25, cex=1, mark.node=F, lwd=3, lend=1, col='grey48')
+#arc.cladelabels(tree=TimeTree,'Xenarthra', node=findMRCA(TimeTree, tips=c('Bradypus_tridactylus','Dasypus_novemcinctus')), ln.offset=1.20, lab.offset=1.25, cex=1, mark.node=F, lwd=3, lend=1, col='grey48')
+#arc.cladelabels(tree=TimeTree,'Euarchonta', node=findMRCA(TimeTree, tips=c('Macaca_mulatta','Galeopterus_variegatus')), ln.offset=1.20, lab.offset=1.25, cex=1, mark.node=F, lwd=3, lend=1, col='grey48')
+#arc.cladelabels(tree=TimeTree,'Glires', node=findMRCA(TimeTree, tips=c('Oryctolagus_cuniculus','Glis_glis')), ln.offset=1.20, lab.offset=1.25, cex=1, mark.node=F, lwd=3, lend=1, col='grey48')
+#arc.cladelabels(tree=TimeTree,'Laurasiatheria', node=findMRCA(TimeTree, tips=c('Pteropus_giganteus','Solenodon_paradoxus')), ln.offset=1.20, lab.offset=1.25, cex=1, mark.node=F, lwd=3, lend=1, col='grey48')
+#}
 
 addcladelabels<-function(ln.offset=1.175,lab.offset=1.225){
   arc.cladelabels(tree=TimeTree,'Marsupialia', node=findMRCA(TimeTree, tips=c('Acrobates','Rhyncholestes')), ln.offset=ln.offset, lab.offset=lab.offset, cex=1, mark.node=F, lwd=3, lend=1, col='grey48')
@@ -284,12 +283,12 @@ write.table(pd.ARD.1$ace, file='Upham_et_al_2020.posteriorprobability.SIMMAP.ARD
 plot(fitARD.character1$lik.anc, pd.ARD.1$ace, xlab='marginal ancestral states', ylab='posterior probabilites from stochastic mapping')
 lines(c(0,1), c(0,1), lty='dashed', col='red', lwd=2)
 
-#regression summaries indicating marginal ancestral states and posterior probabilities are virtually identical across characters
+#regression summaries indicating marginal ancestral states and posterior probabilities are similar across characters
 summary(lm(fitARD.character1$lik.anc~pd.ARD.1$ace))
 summary(lm(fitARD.character1$lik.anc[,1]~pd.ARD.1$ace[,1]))
 summary(lm(fitARD.character1$lik.anc[,2]~pd.ARD.1$ace[,2]))
 summary(lm(fitARD.character1$lik.anc[,3]~pd.ARD.1$ace[,3]))
-#R^2 > 0.96 for all ## this is not the case-- revisit this
+
 
 #plotting posterior densities from SIMMAP
 dd<-density(TimeTree.simmap.ARD.character1)
