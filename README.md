@@ -16,3 +16,12 @@ Jonathan J. Hughes(1), Jacob S. Berv(1,2,3), Stephen G. B. Chester(4,5,6), Eric 
 7. Department of Anthropology, Yale University, New Haven, CT, USA
 8. Divisions of Vertebrate Paleontology and Vertebrate Zoology, Yale Peabody Museum of Natural History, New Haven, CT, USA
 9. Department of Earth Sciences, University of Cambridge, Cambridge, UK
+
+
+mammal_data_v2 is the dataset used for reconstructions on the Meredith_2011 topology
+
+mammal_data_v2_upham is the dataset used for reconstructions on the Upham_2019 topology
+
+Meredith.R and Upham.R are respectivley, R scripts for reproducting analyses on the Meredith et al 2011 and Upham et al 2019 topologies, as well as their associated RData workspace objects
+
+Analysis products are deposited inside /Meredith_output and /Upham_output
