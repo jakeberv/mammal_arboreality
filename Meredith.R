@@ -10,10 +10,10 @@ require(plotrix)
 require(ape)
 
 #set working directory
-setwd("~/jsb439@cornell.edu/Dan-Shared/the_trees_are_dead_part2/analyses")
+setwd("~/Users/cotinga/jsb439@cornell.edu/Code/mammal_arboreality")
 
 #load the tree and clean up
-TimeTree<-read.tree("AAtimetreeAUTOhardMEAN.tree")
+TimeTree<-read.tree("meredith_2011.tre")
 
 #import the data table
 data<-read.table("mammal_data_v2.txt", header=T)
@@ -104,11 +104,11 @@ transitions <- matrix(c(0, 1, 2, 1, 0, 2, 2, 2, 0), nrow=3)
 
 #fit custom transition model with ace, for maximum likelihood estimate, with different initial starting value
 fitCustom.character1 <- ace(character1, TimeTree, model=transitions, type='discrete', ip=c(0.001, 0.001))
-AIC(fitCustom.character1) #249.4975
+AIC(fitCustom.character1) #243.9198
 
 
 fitARD.character1 <- ace(character1, TimeTree, model='ARD', type='discrete', ip=c(0.001, 0.001))
-AIC(fitARD.character1) #242.3074, but runs with errors - revisit this
+AIC(fitARD.character1) #234.4911
 
 #trying fitMK instead of ace -- results are the same, so ignoring
 test<-fitMk(TimeTree, character1, model='ARD', type='discrete')
