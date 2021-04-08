@@ -686,35 +686,3 @@ segplot(rates=counts.NS, ylim=c(0, 0.035), color="blue", spline=T, width=3, ax=F
 abline(v=66, lty=2, lwd=0.75)
 
 dev.off()
-
-
-
-
-
-
-
-
-
-######
-#debugging
-fitMk(tree=posterior_trees.sub[[26]], model=transitions.int, x=character1, pi="fitzjohn")
-
-
-NS.rates.simmap.character1.posterior.int<-getratesloop(posteriortrees=posterior_trees.sub[26], bins=50, splitmaps=split.simmap.character1.posterior.int[26], type="Non-arboreal->Semi-arboreal")
-
-
-describe.simmap(split.simmap.character1.posterior.int[[26]])
-split.simmap.character1.posterior.int[[26]][[2]]$Q
-
-
-
-plot(split.simmap.character1.posterior.int[[26]][[2]])
-
-
-
-plotTree(TimeTree,add=F,ftype="i",lwd=1,color=make.transparent("blue", 0.5),
-         mar=par()$mar,direction="rightwards", fsize=0.25)
-
-nodelabels(cex=0.25, frame="circle")
-
-
