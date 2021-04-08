@@ -368,28 +368,28 @@ r<-max(obj$leg[,1])-obj$leg[,2] #calculates appropriate radius lengths
 
 
 #generate PDF summary for the first custom model
-pdfgenerator(filename="Upham_et_al_2020.SIMMAP-2_rate_V1.pdf", basetree=(TimeTree), simsum=pd.1, title="Two rate model", modelfit=fitCustom.character1)
+pdfgenerator(filename="Upham_et_al_2019.SIMMAP-2_rate_V1.pdf", basetree=(TimeTree), simsum=pd.1, title="Two rate model", modelfit=fitCustom.character1)
 #generate PDF summary for the second custom model
-pdfgenerator(filename="Upham_et_al_2020.SIMMAP-4_rate_V1.pdf", basetree=(TimeTree), simsum=pd.int.1, title="Four rate model", modelfit=fitCustom.int.character1)
+pdfgenerator(filename="Upham_et_al_2019.SIMMAP-4_rate_V1.pdf", basetree=(TimeTree), simsum=pd.int.1, title="Four rate model", modelfit=fitCustom.int.character1)
 #generate PDF summary for the ARD.model
-pdfgenerator(filename="Upham_et_al_2020.SIMMAP-6_rate_V1.pdf", basetree=(TimeTree), simsum=pd.ARD.1, title="Six rate model", modelfit=fitARD.character1)
+pdfgenerator(filename="Upham_et_al_2019.SIMMAP-6_rate_V1.pdf", basetree=(TimeTree), simsum=pd.ARD.1, title="Six rate model", modelfit=fitARD.character1)
 
 
 #generate PDF summary for the first custom model + posterior
-pdfgenerator(filename="Upham_et_al_2020.SIMMAP-2_rate_pos_V1.pdf", basetree=(TimeTree), simsum=pd.1.pos, title="Two rate model, posterior trees", modelfit=fitCustom.character1, posmodelfit=Qs.pos, posterior=T)
+pdfgenerator(filename="Upham_et_al_2019.SIMMAP-2_rate_pos_V1.pdf", basetree=(TimeTree), simsum=pd.1.pos, title="Two rate model, posterior trees", modelfit=fitCustom.character1, posmodelfit=Qs.pos, posterior=T)
 #generate PDF summary for the second custom model + posterior
-pdfgenerator(filename="Upham_et_al_2020.SIMMAP-4_rate_pos_V1.pdf", basetree=(TimeTree), simsum=pd.int.1.pos, title="Four rate model, posterior trees", modelfit = fitCustom.int.character1, posmodelfit=Qs.pos.int, posterior=T)
+pdfgenerator(filename="Upham_et_al_2019.SIMMAP-4_rate_pos_V1.pdf", basetree=(TimeTree), simsum=pd.int.1.pos, title="Four rate model, posterior trees", modelfit = fitCustom.int.character1, posmodelfit=Qs.pos.int, posterior=T)
 #generate PDF summary for the ARD.model + posterior
-pdfgenerator(filename="Upham_et_al_2020.SIMMAP-6_rate_pos_V1.pdf", basetree=(TimeTree), simsum=pd.ARD.1.pos, title="Six rate model, posterior trees", modelfit = fitARD.character1, posmodelfit=Qs.pos.ARD, posterior=T)
+pdfgenerator(filename="Upham_et_al_2019.SIMMAP-6_rate_pos_V1.pdf", basetree=(TimeTree), simsum=pd.ARD.1.pos, title="Six rate model, posterior trees", modelfit = fitARD.character1, posmodelfit=Qs.pos.ARD, posterior=T)
 
 
 #writing out the posterior probabilities
-write.table(pd.1$ace, file='Upham_et_al_2020.SIMMAP-2_rate_nodeprobability.SIMMAP.V1.txt', quote=F, sep="\t", row.names=T, col.names=T)
-write.table(pd.int.1$ace, file='Upham_et_al_2020.SIMMAP-4_rate_nodeprobability.SIMMAP.V1.txt', quote=F, sep="\t", row.names=T, col.names=T)
-write.table(pd.ARD.1$ace, file='Upham_et_al_2020.SIMMAP-6_rate_nodeprobability.SIMMAP.V1.txt', quote=F, sep="\t", row.names=T, col.names=T)
-write.table(pd.1.pos$ace, file='Upham_et_al_2020.SIMMAP-2_rate_pos_nodeprobability.SIMMAP.V1.txt', quote=F, sep="\t", row.names=T, col.names=T)
-write.table(pd.int.1.pos$ace, file='Upham_et_al_2020.SIMMAP-4_rate_pos_nodeprobability.SIMMAP.V1.txt', quote=F, sep="\t", row.names=T, col.names=T)
-write.table(pd.ARD.1.pos$ace, file='Upham_et_al_2020.SIMMAP-6_rate_pos_nodeprobability.SIMMAP.V1.txt', quote=F, sep="\t", row.names=T, col.names=T)
+write.table(pd.1$ace, file='Upham_et_al_2019.SIMMAP-2_rate_nodeprobability.SIMMAP.V1.txt', quote=F, sep="\t", row.names=T, col.names=T)
+write.table(pd.int.1$ace, file='Upham_et_al_2019.SIMMAP-4_rate_nodeprobability.SIMMAP.V1.txt', quote=F, sep="\t", row.names=T, col.names=T)
+write.table(pd.ARD.1$ace, file='Upham_et_al_2019.SIMMAP-6_rate_nodeprobability.SIMMAP.V1.txt', quote=F, sep="\t", row.names=T, col.names=T)
+write.table(pd.1.pos$ace, file='Upham_et_al_2019.SIMMAP-2_rate_pos_nodeprobability.SIMMAP.V1.txt', quote=F, sep="\t", row.names=T, col.names=T)
+write.table(pd.int.1.pos$ace, file='Upham_et_al_2019.SIMMAP-4_rate_pos_nodeprobability.SIMMAP.V1.txt', quote=F, sep="\t", row.names=T, col.names=T)
+write.table(pd.ARD.1.pos$ace, file='Upham_et_al_2019.SIMMAP-6_rate_pos_nodeprobability.SIMMAP.V1.txt', quote=F, sep="\t", row.names=T, col.names=T)
 
 #this chunk no longer used
 # #comparing marginal ancestral states to posterior probabilities
@@ -407,40 +407,40 @@ write.table(pd.ARD.1.pos$ace, file='Upham_et_al_2020.SIMMAP-6_rate_pos_nodeproba
 
 #plotting posterior densities from SIMMAP
 dd<-density(TimeTree.simmap.character1)
-pdf(file="Upham_et_al_2020.2_rate_SIMMAP.pd-V1.pdf", width=10, height=10)
+pdf(file="Upham_et_al_2019.2_rate_SIMMAP.pd-V1.pdf", width=10, height=10)
 plot(dd)
 dev.off()
 
 #plotting posterior densities from SIMMAP
 dd<-density(TimeTree.simmap.character1.int)
-pdf(file="Upham_et_al_2020.4_rate_SIMMAP.pd-V1.pdf", width=10, height=10)
+pdf(file="Upham_et_al_2019.4_rate_SIMMAP.pd-V1.pdf", width=10, height=10)
 plot(dd)
 dev.off()
 
 #plotting posterior densities from SIMMAP
 dd<-density(TimeTree.simmap.ARD.character1)
-pdf(file="Upham_et_al_2020.6_rate_SIMMAP.pd-V1.pdf", width=10, height=10)
+pdf(file="Upham_et_al_2019.6_rate_SIMMAP.pd-V1.pdf", width=10, height=10)
 plot(dd)
 dev.off()
 
 
 #plotting posterior densities from SIMMAP
 system.time(dd<-density(simmap.character1.posterior))
-pdf(file="Upham_et_al_2020.2_rate_pos_SIMMAP.pd-V1.pdf", width=10, height=10)
+pdf(file="Upham_et_al_2019.2_rate_pos_SIMMAP.pd-V1.pdf", width=10, height=10)
 plot(dd)
 rm(dd)
 dev.off()
 
 #plotting posterior densities from SIMMAP
 dd<-density(simmap.character1.posterior.int)
-pdf(file="Upham_et_al_2020.4_rate_pos_SIMMAP.pd-V1.pdf", width=10, height=10)
+pdf(file="Upham_et_al_2019.4_rate_pos_SIMMAP.pd-V1.pdf", width=10, height=10)
 plot(dd)
 rm(dd)
 dev.off()
 
 #plotting posterior densities from SIMMAP
 dd<-density(simmap.ARD.character1.posterior)
-pdf(file="Upham_et_al_2020.6_rate_pos_SIMMAP.pd-V1.pdf", width=10, height=10)
+pdf(file="Upham_et_al_2019.6_rate_pos_SIMMAP.pd-V1.pdf", width=10, height=10)
 plot(dd)
 rm(dd)
 dev.off()
@@ -451,7 +451,7 @@ dev.off()
 #start plotting parsimony reconstruction#
 ##########################################
 
-pdf(file="Upham_et_al_2020.MPR-V1.pdf", width=10, height=10)
+pdf(file="Upham_et_al_2019.MPR-V1.pdf", width=10, height=10)
 #change to your output directory
 
 plotTree(TimeTree, cols, type='fan', fsize=0.5, ftype='i', lwd=2.5, offset=3)
@@ -486,7 +486,7 @@ legend('topleft', legend=paste(' Consistency Index = ', round(consistency,3), '\
 dev.off() #end plotting
 
 
-write.table(pars, file='Upham_et_al_2020.parsimony.V1.txt', quote=F, sep="\t", row.names=T, col.names=T)
+write.table(pars, file='Upham_et_al_2019.parsimony.V1.txt', quote=F, sep="\t", row.names=T, col.names=T)
 
 
 
