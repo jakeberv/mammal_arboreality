@@ -21,7 +21,6 @@ Jonathan J. Hughes(1), Jacob S. Berv(1,2,3), Stephen G. B. Chester(4,5,6), Eric 
 Meredith_2011.R and Upham_2019.R are respectivley, R scripts for producing analyses of ancestral ecologies using the Meredith et al 2011 and Upham et al 2019 consensus topologies. In the case of Upham et al 2019, additional analyses are performed on a sample of 1000 posterior trees. These primary scripts rely on and source functions contained within rate_through_time.R, helpers.R, and simmap_parallel.R R documents. 
 
 mammal_data_v2 is the dataset used for reconstructions on the Meredith_2011 topology.
-
 mammal_data_v2_upham is the dataset used for reconstructions on the Upham_2019 topology.
 
-Analysis products are deposited inside /meredith_out and /upham_out
+Analysis output files are deposited inside analyses_out
