@@ -26,6 +26,7 @@ fitQ<-function(tree, characters, model, pi){
   return(fittedQ)
 }
 
+
 # Qs<-function(tree, characters, model, pi){
 # 
 #   if (class(tree)=="multiPhylo") {
@@ -326,16 +327,21 @@ describe.simmap.alt<-function (tree, ...) {
 
 
 #run simmap in parallel
-simmap.parallel<-function(trees, model, sims, characters, pi, ladderize, Q_cores, S_cores, preschedule=T){
-  #generate a distribution of Q matricies from the posterior distribution
-  if (class(trees)=="multiPhylo"){
-    print(paste("detected", length(trees), "input trees, estimating Q matricies"))
-    Qs <- Qs_loop.mc(trees=trees, characters = characters, mod=model, pi=pi, fun=Qs_loop, cores = Q_cores)
-  } else {
-    print("detected single input tree, estimating Q matrix")
-    Qs <- Qs_loop(trees=trees, characters = characters, mod=model, pi=pi)
-  }
+simmap.parallel<-function(trees, model, sims, characters, pi, Q_ext=F, Q_ext_vals, ladderize, Q_cores, S_cores, preschedule=T){
   
+  if(Q_ext==T){
+    Qs <- Q_ext_vals
+  } else {
+    #generate a distribution of Q matrices from the posterior distribution
+    if (class(trees)=="multiPhylo"){
+      print(paste("detected", length(trees), "input trees, estimating Q matricies"))
+      Qs <- Qs_loop.mc(trees=trees, characters = characters, mod=model, pi=pi, fun=Qs_loop, cores = Q_cores)
+    } else {
+      print("detected single input tree, estimating Q matrix")
+      Qs <- Qs_loop(trees=trees, characters = characters, mod=model, pi=pi)
+    }
+    
+  }
   
   if (class(trees) == "multiPhylo"){
     print(paste("detected", length(trees), "input trees, estimating", sims, "stochastic maps on each"))
