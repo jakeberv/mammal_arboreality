@@ -1,4 +1,7 @@
 # mammal_arboreality
+
+<a href="https://zenodo.org/badge/latestdoi/227213730"><img src="https://zenodo.org/badge/227213730.svg" alt="DOI"></a>
+
 R code for reconstructing the evolution of mammal arboreality
 
 Ecological selectivity and the evolution of mammalian substrate 
