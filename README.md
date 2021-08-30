@@ -6,7 +6,7 @@ preference across the K–Pg boundary
 
 Accepted for publication at Ecology and Evolution, August 2021 DOI NA
 
-Jonathan J. Hughes (1,ƛ,*), Jacob S. Berv (1,2,3,ƛ,@), Stephen G. B. Chester (4,5,6), Eric J. Sargis (7,8,9), Daniel J. Field (9,10,11,*)
+Jonathan J. Hughes (1,ƛ,%), Jacob S. Berv (1,2,3,ƛ,@), Stephen G. B. Chester (4,5,6), Eric J. Sargis (7,8,9), Daniel J. Field (9,10,11,%)
 
 1. Department of Ecology & Evolutionary Biology, Cornell University, Ithaca, NY, USA
 2. Department of Ecology & Evolutionary Biology, University of Michigan, Ann Arbor, MI, USA
@@ -19,8 +19,11 @@ Jonathan J. Hughes (1,ƛ,*), Jacob S. Berv (1,2,3,ƛ,@), Stephen G. B. Chester (
 9. Yale Institute for Biospheric Studies, New Haven, CT, USA
 10. Department of Earth Sciences, University of Cambridge, Cambridge, UK
 11. Museum of Zoology, University of Cambridge, UK
+
 ƛAuthors contributed equally
-*Authors for correspondence: jjh359@cornell.edu; djf70@cam.ac.uk
+
+%Authors for correspondence: jjh359@cornell.edu; djf70@cam.ac.uk
+
 @Code author: jsb439@cornell.edu
 
 Summary of contents:
